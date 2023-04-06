@@ -1,0 +1,13 @@
+<div class="col">
+    <form (ngSubmit) = "buscar()">
+        <input 
+        type="text" 
+        name="termino" 
+        id="Buscar por pais" 
+        class="form-control"
+        (input)="teclaPresionada($event)"
+        [(ngModel)] = "termino"
+        placeholder="Buscar por pais ..."
+        >
+    </form>
+</div>
