@@ -10,6 +10,15 @@
     ></app-pais-input>
 </div>
 
+<ul class="list-group">
+    <li 
+    class="list-group-item list-group-item-action" 
+    *ngFor="let pais of sugerenciaPais"
+    (click)="buscar(pais.name.common)"
+    >
+        {{pais.name.common}}
+    </li>
+</ul>
 <hr>
 
 <div class="alert alert-danger" *ngIf="error">
