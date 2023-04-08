@@ -18,4 +18,8 @@ export class PaisService {
   buscarCapital(termino: string): Observable<Country[]>{
     return this.http.get<Country[]>(`${this.urlService}/capital/${termino}`)  
   }
+
+  buscarPorCode(termino : string ): Observable<Country>{
+    return this.http.get<Country>(`${this.urlService}/alpha/${termino}`)
+  }
 }

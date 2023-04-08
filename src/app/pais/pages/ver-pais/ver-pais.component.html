@@ -1,1 +1,56 @@
-<p>ver-pais works!</p>
+<div class="alert alert-info" *ngIf="!pais; else divPais">
+    Espere por favor ..
+</div>
+
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: {{pais.name.common}}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>
+                Bandera
+            </h3>
+            <img [src]="pais.flags.png" class="img-thumbnail rounded">
+        </div>
+
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población: </strong> {{pais.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Capital: </strong> {{pais.capital}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Region: </strong> {{pais.region}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Subregion: </strong> {{pais.subregion}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary m-2">
+                {{ pais.translations["ara"].common | json }}
+            </span>
+            <span class="badge bg-primary m-2">
+                {{ pais.translations["bre"].common | json }}
+            </span>
+            <span class="badge bg-primary m-2">
+                {{ pais.translations["est"].common | json }}
+            </span>
+            <span class="badge bg-primary m-2">
+                {{ pais.translations["ita"].common | json }}
+            </span>
+        </div>
+    </div>
+</ng-template>
